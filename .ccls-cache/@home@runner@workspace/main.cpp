@@ -1,31 +1,32 @@
+
 #include <iostream>
-#include <iomanp>
+#include <iomanip>
+#include <cmath>
 
 using namespace std;
+
 int main(){
+    double principal, rate, time, FinalAmount, interest;
 
-double principal, rate, FinalAmount, interest;
+    //user input
+    cout << "Enter the principal amount: ";
+    cin >> principal;
+    cout << "Enter the rate of interest: ";
+    cin >> rate;
+    cout << "Enter the compound time period in years: ";
+    cin >> time;
 
-//user input
-cout << "Enter the principal amount: ";
- cin >> principal;
-  cout << "Enter the rate of interest: ";
-  cin >> rate;
-  cout << "Enter the compound time period in years: ";
-//convert
-  double rate decimal = rate / 100;
-  
-  //calculations
-  FinalAmount = principal * pow((1 + rate / 100), 2);
+    //calculations
+    FinalAmount = principal * pow((1 + rate / 100), time);
+    interest = FinalAmount - principal;
 
- 
-  //output
-cout << "intrest rate: " << interest << endl;"
-  cout << "compound time period in years: " << compound <<
-  cout << "principal: " << principal <<
-  cout << "rate: " << rate <<
-  cout << "FinalAmount $: " << FinalAmount << endl;
-  return 0;
-
-  
-  
+    //output
+    cout << fixed << setprecision(2);
+    cout << "Principal: $" << principal << endl;
+    cout << "Interest rate: " << rate << "%" << endl;
+    cout << "Time period: " << time << " years" << endl;
+    cout << "Interest earned: $" << interest << endl;
+    cout << "Final Amount: $" << FinalAmount << endl;
+    
+    return 0;
+}
